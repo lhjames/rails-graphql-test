@@ -1,24 +1,36 @@
-# README
+Query exemple to sign_in user: 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+mutation {
+  signinUser(
+    credentials: {
+      email: "example@gmail.com",
+      password: "1234"
+    }
+  ) {
+    token
+    user {
+      id
+    }
+  }
+}
+```
 
-Things you may want to cover:
+Query exemple to create link once user is signed_in: 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+mutation {
+  createLink(
+    url: "http://my-awesome-website.com",
+    description: "Link to test",
+  ) {
+    id
+    url
+    description
+    postedBy {
+      id
+      name
+    }
+  }
+}
+```
