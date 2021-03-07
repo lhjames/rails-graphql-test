@@ -17,7 +17,7 @@ class Mutations::CreateLinkTest < ActiveSupport::TestCase
   end
 end
 
-#Query exemple to create link once user is signed_in: 
+# Query exemple to create link once user is signed_in: 
 
 # mutation {
 #   createLink(
