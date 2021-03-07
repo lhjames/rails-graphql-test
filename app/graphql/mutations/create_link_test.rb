@@ -16,3 +16,20 @@ class Mutations::CreateLinkTest < ActiveSupport::TestCase
     assert_equal link.url, 'http://example.com'
   end
 end
+
+#Query exemple to create link once user is signed_in: 
+
+# mutation {
+#   createLink(
+#     url: "http://my-awesome-website.com",
+#     description: "Link to test",
+#   ) {
+#     id
+#     url
+#     description
+#     postedBy {
+#       id
+#       name
+#     }
+#   }
+# }
